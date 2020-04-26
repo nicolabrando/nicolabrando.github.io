@@ -53,8 +53,8 @@
 		api.executeCommand('password', mia_password)
 	});
 
-	var button_pwd = document.querySelector('#setuser');
-	button_pwd.addEventListener('click', () => {
+	var button_user = document.querySelector('#setuser');
+	button_user.addEventListener('click', () => {
 		mio_user = document.getElementById("textusername").value;
 		api.executeCommand('displayName', mio_user)
 	});
