@@ -3,33 +3,33 @@
 <script src='https://meet.jit.si/external_api.js'></script>
 </head>
 <body>
-<h1>Videoconferenza Jitsi</h1>
+	<h1>Videoconferenza Jitsi</h1>
 
 	<a href="https://github.com/jitsi/jitsi-meet/blob/master/doc/api.md"> API Jitsi </a>
 
-Nome stanza: <input type="text" id="textnomestanza" value="">
+	<div> Nome stanza: <input type="text" id="textnomestanza" value=""> </div>
 
-<button id="start" type="button">Inizia Videoconferenza</button>
+	<button id="start" type="button">Inizia Videoconferenza</button>
 
-<div id="jitsi-container"></div>
+	<div id="jitsi-container"></div>
 
-<script>
-var button = document.querySelector('#start');
-var container = document.querySelector('#jitsi-container');
-var api = null;
+	<script>
+	var button = document.querySelector('#start');
+	var container = document.querySelector('#jitsi-container');
+	var api = null;
 
-button.addEventListener('click', () => {
-	var nomestanza = document.getElementById("textnomestanza").value
-    var domain = "meet.jit.si";
-    var options = {
-        "roomName": nomestanza,
-        "parentNode": container,
-        "width": 1000,
-        "height": 600,
-    };
-    api = new JitsiMeetExternalAPI(domain, options);
-});
+	button.addEventListener('click', () => {
+		var nomestanza = document.getElementById("textnomestanza").value;
+    		var domain = "meet.jit.si";
+    		var options = {
+        		"roomName": nomestanza,
+		        "parentNode": container,
+	        	"width": 1000,
+	        	"height": 600,
+    			};
+    	api = new JitsiMeetExternalAPI(domain, options);
+	});
 
-</script>
+	</script>
 </body>
 </html>
