@@ -3,20 +3,22 @@
 <script src='https://meet.jit.si/external_api.js'></script>
 </head>
 <body>
-<h1>Ciao</h1>
-Nome stanza: <input type="text" id="nomestanza" value="">
+<h1>Jitsi Meeting</h1>
 
-<button id="start" type="button">Start</button>
-<div id="jitsi-container">
-</div>
+Nome stanza: <input type="text" id="textnomestanza" value="">
+
+<button id="start" type="button">Inizia Videoconferenza</button>
+
+<div id="jitsi-container"></div>
 
 <script>
 var button = document.querySelector('#start');
 var container = document.querySelector('#jitsi-container');
 var api = null;
-var roomName = document.querySelector('#nomestanza')
+//var nomestanza = document.getElementById("textnomestanza").value
 
 button.addEventListener('click', () => {
+	var nomestanza = document.getElementById("textnomestanza").value
     var domain = "meet.jit.si";
     var options = {
         "roomName": nomestanza,
