@@ -3,7 +3,9 @@
 <script src='https://meet.jit.si/external_api.js'></script>
 </head>
 <body>
-<h1>Jitsi Meeting</h1>
+<h1>Videoconferenza Jitsi</h1>
+
+	<a href="https://github.com/jitsi/jitsi-meet/blob/master/doc/api.md"> API Jitsi </a>
 
 Nome stanza: <input type="text" id="textnomestanza" value="">
 
@@ -15,7 +17,6 @@ Nome stanza: <input type="text" id="textnomestanza" value="">
 var button = document.querySelector('#start');
 var container = document.querySelector('#jitsi-container');
 var api = null;
-//var nomestanza = document.getElementById("textnomestanza").value
 
 button.addEventListener('click', () => {
 	var nomestanza = document.getElementById("textnomestanza").value
