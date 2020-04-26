@@ -7,9 +7,23 @@
 
 	<a href="https://github.com/jitsi/jitsi-meet/blob/master/doc/api.md"> API Jitsi </a><br><br>
 
-	<div> Nome stanza: <input type="text" id="textnomestanza" value=""> </div>
-
+	<div> 
+	Nome stanza: 
+	<input type="text" id="textnomestanza" value=""> 
 	<button id="start" type="button">Inizia Videoconferenza</button>
+	</div>
+
+	<div> 
+	Scegliere password: 
+	<input type="text" id="textpassword" value="">
+	<button id="setpwd" type="button">Impostare password</button>
+	</div>
+
+	<div> 
+	Scegliere username: 
+	<input type="text" id="textusername" value="">
+	<button id="setuser" type="button">Impostare username</button>
+	</div>
 
 	<div id="jitsi-container"></div>
 
@@ -17,19 +31,37 @@
 	var button = document.querySelector('#start');
 	var container = document.querySelector('#jitsi-container');
 	var api = null;
+	var mia_password = null;
+	var mio_user = null;
 
 	button.addEventListener('click', () => {
 		var nomestanza = document.getElementById("textnomestanza").value;
-    		var domain = "meet.jit.si";
-    		var options = {
+		var mia_password = document.getElementById("textpassword").value;
+    	var domain = "meet.jit.si";
+    	var options = {
         		"roomName": nomestanza,
 		        "parentNode": container,
 	        	"width": 1000,
 	        	"height": 600,
     			};
-    	api = new JitsiMeetExternalAPI(domain, options);
+    		api = new JitsiMeetExternalAPI(domain, options);
 	});
 
+	var button_pwd = document.querySelector('#setpwd');
+	button_pwd.addEventListener('click', () => {
+		mia_password = document.getElementById("textpassword").value;
+		api.executeCommand('password', mia_password)
+	});
+
+	var button_pwd = document.querySelector('#setuser');
+	button_pwd.addEventListener('click', () => {
+		mio_user = document.getElementById("textusername").value;
+		api.executeCommand('displayName', mio_user)
+	});
+
+
 	</script>
+
+
 </body>
 </html>
